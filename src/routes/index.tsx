@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
-const ETAPAS: [string, ...string[]] = ["Novo", "Contato", "Proposta", "Negociação", "Ganho", "Perdido"];
+const ETAPAS: [string, ...string[]] = ["Novo", "Em contato", "Fechado"];
 
 type Lead = { id: string; empresa: string; valor: number; etapa: string };
 
