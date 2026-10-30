@@ -29,22 +29,22 @@ function Index() {
   const [etapa, setEtapa] = useState(ETAPAS[0]);
 
   const load = async () => {
-    const { data } = await supabase.from("leads").select("*").order("created_at", { ascending: false });
-    setLeads((data as Lead[]) ?? []);
+    const { data } = await supabase.from("leads").select("EMPRESA, VALOR, ETAPA");
+    setLeads((data ?? []).map((r) => ({ id: r.EMPRESA, empresa: r.EMPRESA, valor: Number(r.VALOR), etapa: r.ETAPA ?? ETAPAS[0] })));
   };
   useEffect(() => { load(); }, []);
 
   const add = async (e: FormEvent) => {
     e.preventDefault();
     if (!empresa.trim()) return;
-    await supabase.from("leads").insert({ empresa: empresa.trim(), valor: Number(valor) || 0, etapa });
+    await supabase.from("leads").insert({ EMPRESA: empresa.trim(), VALOR: Number(valor) || 0, ETAPA: etapa });
     setEmpresa(""); setValor(""); setEtapa(ETAPAS[0]);
     load();
   };
 
   const mudar = async (id: string, nova: string) => {
     setLeads((ls) => ls.map((l) => (l.id === id ? { ...l, etapa: nova } : l)));
-    await supabase.from("leads").update({ etapa: nova }).eq("id", id);
+    await supabase.from("leads").update({ ETAPA: nova }).eq("EMPRESA", id);
   };
 
   const field = "rounded-md border border-input bg-card px-3 py-2 text-sm text-foreground";
@@ -73,7 +73,7 @@ function Index() {
               <p className="text-sm text-muted-foreground">{brl(Number(l.valor))}</p>
             </div>
             <select className={field} value={l.etapa} onChange={(e) => mudar(l.id, e.target.value)}>
-              {ETAPAS.map((s) => <option key={s}>{s}</option>)}
+              {(ETAPAS.includes(l.etapa) ? ETAPAS : [l.etapa, ...ETAPAS]).map((s) => <option key={s}>{s}</option>)}
             </select>
           </li>
         ))}
