@@ -4,6 +4,12 @@ eu quero um app que 1) listar os leads da tabela do supabase (esta tabela do sup
 
 This project was built with [Lovable](https://lovable.dev).
 
+PERGUNTAS CHALLENGE: A IA sugeriu utilizar a database do lovable ao invés do supabase e também sugeriu criar mais de 3 possibilidades de classificação de etapas, para ter mais especificação da etapa que estamos. Ambas eu não aceitei a sugestão pois não fazem parte do que foi pedido neste desafio. 
+
+"Onde este dado fica guardado?" - o dado adicionado no aplicativo fica guardado no banco de dados criado no supabase, assim mesmo que houver um novo acesso no aplicativo, ele abre os mesmos dados.
+
+"o que acontece se eu apagar esta linha no Supabase?" - se a linha que contém a empresa for apagada, ela não aparecerá mais nem no aplicativo nem no banco de dados.
+
 ## Build with Lovable
 
 Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9e4028cc-bdb7-51ae-93eb-5a867622c03e).
