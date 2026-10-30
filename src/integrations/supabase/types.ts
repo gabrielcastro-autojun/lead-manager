@@ -16,25 +16,19 @@ export type Database = {
     Tables: {
       leads: {
         Row: {
-          created_at: string
-          empresa: string
-          etapa: string
-          id: string
-          valor: number
+          EMPRESA: string
+          ETAPA: string | null
+          VALOR: number
         }
         Insert: {
-          created_at?: string
-          empresa: string
-          etapa?: string
-          id?: string
-          valor?: number
+          EMPRESA: string
+          ETAPA?: string | null
+          VALOR: number
         }
         Update: {
-          created_at?: string
-          empresa?: string
-          etapa?: string
-          id?: string
-          valor?: number
+          EMPRESA?: string
+          ETAPA?: string | null
+          VALOR?: number
         }
         Relationships: []
       }
