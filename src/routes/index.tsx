@@ -73,7 +73,7 @@ function Index() {
               <p className="text-sm text-muted-foreground">{brl(Number(l.valor))}</p>
             </div>
             <select className={field} value={l.etapa} onChange={(e) => mudar(l.id, e.target.value)}>
-              {ETAPAS.map((s) => <option key={s}>{s}</option>)}
+              {(ETAPAS.includes(l.etapa) ? ETAPAS : [l.etapa, ...ETAPAS]).map((s) => <option key={s}>{s}</option>)}
             </select>
           </li>
         ))}
