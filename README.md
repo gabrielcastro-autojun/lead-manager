@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# Lead Manager
+
+eu quero um app que 1) listar os leads da tabela do supabase (esta tabela do supabase tem uma coluna pra empresas, outra para valor, e outra para etapa; 2) que tenha um formulário para adicionar mais leads; 3) um seletor para mudar a etapa em q a lead está
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9e4028cc-bdb7-51ae-93eb-5a867622c03e).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
